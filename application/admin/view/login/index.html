@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>ERP</title>
+
+    {include file="common/_head"/}
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+               <!-- <h1 class="logo-name">
+                    login
+                </h1>-->
+
+            </div>
+            <h3>ERP欢迎您</h3>
+
+            <form class="m-t" role="form" id="form1" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="admin_name" placeholder="用户名" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="admin_pwd" placeholder="密码" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="captcha" placeholder="验证码" required>
+                    <a href="#" style="margin: 10px 0;display: inline-block">
+                        <img src="{:captcha_src()}" alt="验证码" onclick="this.src='{:captcha_src()}?'+Math.random()" id="captcha_img" class="col-sm-8"/>
+                        <span id="nosee" class="col-sm-4">看不清？</span>
+                    </a>
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+
+            </form>
+        </div>
+    </div>
+
+    {include file="common/_footer"/}
+	<script>
+		$(document).ready(function () {
+
+            $('#captcha_img').click(function(evt){
+                evt.preventDefault();
+            });
+
+            $('#nosee').click(function(evt){
+                $('#captcha_img').attr('src','{:captcha_src()}?'+Math.random()) ;
+                evt.preventDefault();
+            });
+
+
+			$('#form1').validate({
+
+                submitHandler: function(){
+                    console.log($('#form1').serialize());
+                    $.ajax({
+                        url: '{:url("admin/login/login")}',
+                        data: $('#form1').serialize(),
+                        type: 'post',
+                        dataType: 'json',
+                        success: function(res){
+                            //console.log(res);
+                            if(res.err<=0){
+                                layer.msg(res.msg,{icon: 1,time:1000},function(){
+                                    self.location.href = "{:url('admin/index/index')}";
+                                });
+                            }else{
+                                console.log(res);
+                                layer.msg(res.msg,{icon: 2,time:1500},function(){
+                                    $('#captcha_img').attr('src','{:captcha_src()}?'+Math.random()) ;
+                                });
+                            }
+
+                        },
+                        error: function(res){
+                            console.log(res.responseText);
+                        }
+                    });
+
+                    return false;
+                }
+            });
+		});
+
+		
+	</script>
+</body>
+
+</html>

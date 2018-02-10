@@ -1,0 +1,166 @@
+p{
+	margin-bottom: 0;
+}
+label{
+	font-weight: normal;
+}
+.head {
+    height: 40px;
+    background: #08addd;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+    padding: 0 15px;
+}
+.qaitem {
+    color: #666;
+}
+.qatit {
+    border-left: 5px solid #08addd;
+    font-size: 16px;
+    padding: 15px 10px 10px;
+    background: #ececec;
+    color: #212121;
+    line-height: 20px;
+}
+.qa-num {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+    width: 25px;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin: 2px 4px 0 0;
+}
+.qa-txt {
+    display: inline-block;
+    max-width: 85%;
+    vertical-align: middle;
+}
+.qa-options {
+    border-left: 5px solid #484848;
+    font-size: 16px;
+    padding: 10px;
+    background: #fff;
+    line-height: 20px;
+}
+.thcheckbox-div {
+    padding-bottom: 10px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+span.jqTransformCheckboxWrapper {
+    _zoom: 1;
+    display: inline-block;
+    margin: 4px;
+    /* margin-bottom: 4px; */
+    vertical-align: top;
+}
+a.jqTransformCheckbox {
+    background: transparent url(../img/checkbox.png) no-repeat center top;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+a.jqTransformChecked {
+    background-position: center bottom;
+}
+.jqTransformHidden {
+    display: none;
+}
+.thcheckbox-div label {
+    display: inline-block;
+    width: 85%;
+    vertical-align: middle;
+    margin-top: 4px;
+}
+.open-option {
+    margin: 0 15px 0 30px;
+}
+.open-option input {
+    width: 100% !important;
+}
+.input {
+    border: 1px solid #ddd;
+    height: 32px;
+    line-height: 20px;
+    padding: 0 5px;
+    margin-bottom: 5px;
+    font-size: 85%;
+    -webkit-border-radius: 0;
+    -webkit-appearance: none;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ffffff));
+}
+input.large, input.normal {
+    width: 100%;
+}
+.break-txt {
+    color: #089dc9 !important;
+    font-size: 18px;
+    border-left: 5px solid #f9b130;
+    background: #f8f8f8;
+}
+.break-tit {
+    border-bottom: 1px dashed #089dc9;
+    margin-bottom: 10px;
+}
+.break-tit span {
+    height: 30px;
+    line-height: 30px;
+}
+.break-txt-word {
+    font-size: 14px;
+    padding-top: 5px;
+}
+.jqTransformRadioWrapper {
+    _zoom: 1;
+    display: inline-block;
+    margin: 2px;
+    vertical-align: top;
+}
+.jqTransformRadio {
+    background: transparent url(../img/radio.png) no-repeat center top;
+    vertical-align: middle;
+    height: 23px;
+    width: 23px;
+    display: block;
+}
+.gender {
+    display: inline-block;
+    text-align: center;
+    width: 60px;
+    margin-right: 10px;
+}
+.male, .female {
+    background: url(../img/qn_xingbie2.png) no-repeat 0 0;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+}
+.xbcheck {
+    background: url(../img/qn_xingbie.png) no-repeat;
+}
+.male {
+    background-position: -74px 0;
+}
+.btn {
+    text-align: center;
+    margin: 20px auto 30px;
+    display: block;
+}
+.btn a {
+    display: inline-block;
+    width: 140px;
+    height: 36px;
+    color: #fff;
+    text-align: center;
+    background-color: #09c1f9;
+    background: -moz-linear-gradient(top, #09c1f9, #089dc9);
+    background: -ms-linear-gradient(top, #09c1f9, #089dc9);
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 36px;
+}
